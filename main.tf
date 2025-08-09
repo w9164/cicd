@@ -77,7 +77,7 @@ resource "aws_instance" "linux_instance" {
   # 实例类型
   instance_type = "t2.micro"
   # 密钥对名称
-  key_name = "id_ed25519.pub"
+  key_name = "id_ed25519"
   # IAM 实例配置文件
   iam_instance_profile = "EC2CodeDeploy-new"
   # 实例标签
