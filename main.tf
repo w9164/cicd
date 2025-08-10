@@ -73,13 +73,14 @@ resource "aws_default_vpc" "default_vpc" {
 # 创建 EC2 实例
 resource "aws_instance" "linux_instance" {
   # 使用的 AMI 镜像 ID，us-east-1区的 Amazon linux 2023
-  ami = "ami-01816d07b1128cd2d"
+  ami = "ami-0de716d6197524dd9"
   # 实例类型
-  instance_type = "t2.micro"
+  instance_type = "t3.micro"
   # 密钥对名称
   key_name = "id_ed25519"
   # IAM 实例配置文件
   iam_instance_profile = "EC2CodeDeploy-new"
+  vpc_security_group_ids = [aws_security_group.ec2_security_group.id] 
   # 实例标签
   tags = {
     Name = "LYC-APP2"
